@@ -1,46 +1,73 @@
 package io.adev.proforientation
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val redView: ViewGroup = FrameLayout(this)
-        redView.setBackgroundColor(Color.parseColor("#F44336"))
-        redView.layoutParams = ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.MATCH_PARENT
+        val rootView = layoutInflater.inflate(
+            R.layout.main_activity,
+            null
         )
 
-        val greenView = View(this)
-        greenView.setBackgroundColor(Color.parseColor("#1DE9B6"))
-        greenView.layoutParams = FrameLayout.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            200
-        )
+        setContentView(rootView)
 
-        val blueView = View(this)
-        blueView.setBackgroundColor(Color.parseColor("#0277BD"))
-        val blueViewLayoutParams = FrameLayout.LayoutParams(
-            100,
-            ViewGroup.LayoutParams.MATCH_PARENT
-        )
-        blueViewLayoutParams.gravity = Gravity.CENTER
-        blueViewLayoutParams.leftMargin
-        blueView.layoutParams = blueViewLayoutParams
-
-        redView.addView(greenView)
-        redView.addView(blueView)
-
-        setContentView(redView)
+//        val rootView = FrameLayout(this)
+//        rootView.layoutParams = ViewGroup.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.MATCH_PARENT
+//        )
+//
+//        val credentialsView = LinearLayout(this)
+//        credentialsView.orientation = LinearLayout.VERTICAL
+//        val credentialsLayoutParams = FrameLayout.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.WRAP_CONTENT
+//        )
+//        credentialsView.layoutParams = credentialsLayoutParams
+//        credentialsLayoutParams.gravity = Gravity.CENTER
+//        rootView.addView(credentialsView)
+//
+//        val loginEdit = EditText(this)
+//        val loginEditLayoutParams = FrameLayout.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.WRAP_CONTENT
+//        )
+//        loginEdit.layoutParams = loginEditLayoutParams
+//        loginEditLayoutParams.gravity = Gravity.LEFT
+//        loginEdit.hint = "Логин"
+//        credentialsView.addView(loginEdit)
+//
+//        val passwordEdit = EditText(this)
+//        val passwordEditLayoutParams = FrameLayout.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.WRAP_CONTENT
+//        )
+//        passwordEdit.layoutParams = passwordEditLayoutParams
+//        passwordEditLayoutParams.gravity = Gravity.LEFT
+//        passwordEdit.hint = "Пароль"
+//        credentialsView.addView(passwordEdit)
+//
+//        val confirmButtonEdit = Button(this)
+//        val confirmButtonEditLayoutParams = FrameLayout.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.WRAP_CONTENT
+//        )
+//        confirmButtonEdit.layoutParams = confirmButtonEditLayoutParams
+//        confirmButtonEditLayoutParams.gravity = Gravity.BOTTOM
+//        confirmButtonEdit.hint = "Вход"
+//        rootView.addView(confirmButtonEdit)
+//
+//        setContentView(rootView)
     }
 }
