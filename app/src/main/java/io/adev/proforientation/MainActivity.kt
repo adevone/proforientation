@@ -1,13 +1,8 @@
 package io.adev.proforientation
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
-import android.widget.FrameLayout
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +14,14 @@ class MainActivity : AppCompatActivity() {
             R.layout.main_activity,
             null
         )
+
+        val loginButton: Button = rootView.findViewById(R.id.loginButton)
+
+        loginButton.setOnClickListener { view ->
+            loginButton.text = "HOLA!"
+        }
+
+        loginButton.text = "123"
 
         setContentView(rootView)
 
