@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         credentialsLayoutParams.gravity = Gravity.CENTER
         credentialsView.orientation = LinearLayout.VERTICAL
 
+
+
+
         rootView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
