@@ -1,7 +1,6 @@
 package io.adev.proforientation
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,20 +9,37 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val rootView = layoutInflater.inflate(
-            R.layout.main_activity,
-            null
-        )
+        setContentView(R.layout.main_activity)
 
-        val loginButton: Button = rootView.findViewById(R.id.loginButton)
+        val toLoginButton: Button = findViewById(R.id.toLoginButton)
+        val toMainButton: Button = findViewById(R.id.toMainButton)
+        val popButton: Button = findViewById(R.id.popButton)
 
-        loginButton.setOnClickListener { view ->
-            loginButton.text = "HOLA!"
+        toLoginButton.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, LoginFragment())
+                .commit()
         }
 
-        loginButton.text = "123"
+        toMainButton.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, MainFragment())
+                .replace(R.id.fragmentContainer, MainFragment())
+                .replace(R.id.fragmentContainer, MainFragment())
+                .replace(R.id.fragmentContainer, MainFragment())
+                .commit()
+        }
 
-        setContentView(rootView)
+        popButton.setOnClickListener {
+            supportFragmentManager.popBackStack()
+        }
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, LoginFragment())
+            .commit()
 
 //        val rootView = FrameLayout(this)
 //        rootView.layoutParams = ViewGroup.LayoutParams(
